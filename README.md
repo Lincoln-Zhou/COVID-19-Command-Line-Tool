@@ -31,6 +31,10 @@ re, requests, prettytable, datetime.
 ![image](https://github.com/Lang-Zhou/2019-nCov-Command-Line-Tool/blob/master/sample.png)
 (测试环境：macOS 10.15.3, Terminal.app)
 
+### 出错处理
+
+程序已设定API获取数据最大延时为10秒，若运行时报错则大概率为接口问题，请检查网络环境或耐心等待。
+
 ## 鸣谢
 
 [DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler)项目发起者提供的API
