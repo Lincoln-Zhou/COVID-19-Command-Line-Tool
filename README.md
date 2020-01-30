@@ -28,6 +28,7 @@ re, requests, prettytable, datetime.
 
 ### 效果展示：
 
+![image](https://github.com/Lang-Zhou/2019-nCov-Command-Line-Tool/blob/master/sample.png)
 (测试环境：macOS 10.15.3, Terminal.app)
 
 ## 鸣谢
