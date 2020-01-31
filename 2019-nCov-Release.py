@@ -22,7 +22,7 @@ error = False
 isnull = False
 try:
     servertime = requests.get('https://lab.isaaclin.cn/nCoV/api/overall', headers=header, timeout=10)
-except requests.exceptions.ConnectionError as e:
+except:
     error = True
     isnull = True
     print('Sorry, last update time currently unavailable.')
