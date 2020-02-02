@@ -25,7 +25,7 @@ try:
 except:
     error = True
     isnull = True
-    print('Sorry, last update time currently unavailable.')
+    print('抱歉，最近更新时刻数据不可用')
 metadata.encoding = 'utf-8'
 if error is not True:
     servertime.encoding = 'utf-8'
