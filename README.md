@@ -1,4 +1,4 @@
-# 2019-nCoV-Command-Line-Tool
+# COVID-19-Command-Line-Tool
 支持自定义要查看的地区.
 
 ## 使用的第三方API与库：
