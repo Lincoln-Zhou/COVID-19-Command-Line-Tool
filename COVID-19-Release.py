@@ -31,17 +31,17 @@ if error is not True:
     servertime.encoding = 'utf-8'
     updatetime = servertime.text
 text = metadata.text  # Get target source code, 'text' is 'str' type
-pattern1 = re.compile(r'(?<=countRemark":"","currentConfirmedCount":)\d*\D+\d*\D+\d*\D+\d*')
+pattern1 = re.compile(r'(?<=countRemark":"","currentConfirmedCount":)\d*\D+\d*\D+\d*\D+\d*\D+\d*')
 ChinaRawData = pattern1.findall(text)
 datalist = re.findall(r"\d+\.?\d*", ChinaRawData[0])
 for element in area:
 	search = element + '","currentConfirmedCount":'
-	pattern = re.compile(rf'(?<={search})\d*\D+\d*\D+\d*\D+\d*')
+	pattern = re.compile(rf'(?<={search})\d*\D+\d*\D+\d*\D+\d*\D+\d*')
 	RawData = pattern.findall(text)
 	datalist.extend(re.findall(r"\d+\.?\d*", RawData[0]))
 for element in country:
 	search = element + '","provinceShortName":"","cityName":"","currentConfirmedCount":'
-	pattern = re.compile(rf'(?<={search})\d*\D+\d*\D+\d*\D+\d*')
+	pattern = re.compile(rf'(?<={search})\d*\D+\d*\D+\d*\D+\d*\D+\d*')
 	RawData = pattern.findall(text)
 	datalist.extend(re.findall(r"\d+\.?\d*", RawData[0]))
 pattern0 = re.compile(r'(?<=updateTime": )\d+\.?\d*')
@@ -52,15 +52,15 @@ print('新型冠状病毒当前数据')
 if isnull is not True:
     print('最后更新于北京时间', ftime)
 table = PrettyTable(['地点', '确诊', '疑似', '治愈', '死亡'])
-table.add_row(['全国', datalist[0], datalist[1], datalist[2], datalist[3]])
-i = 4
+table.add_row(['全国', datalist[0], datalist[2], datalist[3], datalist[4]])
+i = 5
 for element in area:
-	table.add_row([element, datalist[i], datalist[i + 1], datalist[i + 2], datalist[i + 3]])
-	i = i + 4
+	table.add_row([element, datalist[i], datalist[i + 2], datalist[i + 3], datalist[i + 4]])
+	i = i + 5
 for element in country:
-	table.add_row([element, datalist[i], datalist[i + 1], datalist[i + 2], datalist[i + 3]])
-	i = i + 4
+	table.add_row([element, datalist[i], datalist[i + 2], datalist[i + 3], datalist[i + 4]])
+	i = i + 5
 print(table)
 if deathrate:
-	print('当前死亡率:', "{:.5}".format(100 * int(datalist[3]) / int(datalist[0])), '%')
+	print('当前死亡率:', "{:.5}".format(100 * int(datalist[4]) / int(datalist[0])), '%')
 
