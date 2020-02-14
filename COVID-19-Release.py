@@ -17,7 +17,7 @@ country = ['美国'] # 在此处自定义要在结果中显示的境外国家，
 
 header = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15'}  # Deceive Python request
-metadata = requests.get('https://3g.dxy.cn/newh5/view/pneumonia', headers=header)
+metadata = requests.get('https://ncov.dxy.cn/ncovh5/view/pneumonia', headers=header)
 error = False
 isnull = False
 try:
@@ -31,16 +31,16 @@ if error is not True:
     servertime.encoding = 'utf-8'
     updatetime = servertime.text
 text = metadata.text  # Get target source code, 'text' is 'str' type
-pattern1 = re.compile(r'(?<=countRemark":"","confirmedCount":)\d*\D+\d*\D+\d*\D+\d*')
+pattern1 = re.compile(r'(?<=countRemark":"","currentConfirmedCount":)\d*\D+\d*\D+\d*\D+\d*')
 ChinaRawData = pattern1.findall(text)
 datalist = re.findall(r"\d+\.?\d*", ChinaRawData[0])
 for element in area:
-	search = element + '","confirmedCount":'
+	search = element + '","currentConfirmedCount":'
 	pattern = re.compile(rf'(?<={search})\d*\D+\d*\D+\d*\D+\d*')
 	RawData = pattern.findall(text)
 	datalist.extend(re.findall(r"\d+\.?\d*", RawData[0]))
 for element in country:
-	search = element + '","provinceShortName":"","cityName":"","confirmedCount":'
+	search = element + '","provinceShortName":"","cityName":"","currentConfirmedCount":'
 	pattern = re.compile(rf'(?<={search})\d*\D+\d*\D+\d*\D+\d*')
 	RawData = pattern.findall(text)
 	datalist.extend(re.findall(r"\d+\.?\d*", RawData[0]))
