@@ -62,5 +62,5 @@ for element in country:
 	i = i + 5
 print(table)
 if deathrate:
-	print('当前死亡率:', "{:.5}".format(100 * int(datalist[4]) / int(datalist[0])), '%')
+	print('当前死亡率:', "{:.5}".format(100 * int(datalist[4]) / int(datalist[1])), '%')
 
