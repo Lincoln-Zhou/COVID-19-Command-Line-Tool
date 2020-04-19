@@ -1,5 +1,9 @@
 # COVID-19-Command-Line-Tool
 
+***Important Notice: Due to the current global pandemic situation, the number of data source is surging and better services provided by more authentic organizations are available. Hence, this project is closed from middle April, 2020. Unless further notices, the program will not receive updates, and may not function properly.***
+
+***重要声明：鉴于全球COVID-19疫情形势，疫情数据提供源数量在不断增长，亦出现了由权威性更高的机构提供的数据来源服务。因此，本项目将从2020年4月中旬关闭。若无进一步通知，项目程序将不会得到维护，并且有可能无法再正常运行。***
+
 ***注意：由于丁香园的数据源代码经常变更，本程序会频繁更新。请务必更新至本程序的最新版本以获取准确的信息***
 
 支持自定义要查看的地区.
